@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+ runApp(FloatingActionButtonExample());
+}
+class FloatingActionButtonExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {  print("클릭");},
+          child: Text(
+            "클릭"
+          ),
+        ),
+        body: Container(),
+      ),
+    );
+  }
+
 }
 
 class MyApp extends StatelessWidget {
@@ -11,27 +28,69 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        body: Center(
+          child:GestureDetector(
+            onTap: (){
+              print("on tap");
+            },
+            onDoubleTap: (){
+              print("on double tap");
+            },
+            onLongPress: () {
+              print("on long tap");
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.red
+              ),
+              width: 100.0,
+              height: 100.0,
+            ),
+          )
+          /*** 아이콘 버튼* */
+          // IconButton(
+          //   onPressed: (){},
+          //   icon: Icon(
+          //     Icons.home,
+          //   ),
+          // )
+
+
+          /*** 엘레베이티드 버튼* */
+          // ElevatedButton(
+          //   onPressed: () {},
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: Colors.red,
+          //   ),
+          //   child: Text("엘레베이티드 버튼",
+          //   style: TextStyle(
+          //     color: Colors.white,
+          //   )
+          //   ),
+          // )
+          /*** 아웃라인드 버튼* */
+          // OutlinedButton(
+          //   onPressed: () {},
+          //   style: OutlinedButton.styleFrom(
+          //     foregroundColor: Colors.red
+          //   ),
+          //   child: Text(
+          //     "아웃라인드 버튼"
+          //   ),
+          // )
+
+
+          /*** 텍스트 버튼* */
+         // TextButton(
+         //    onPressed: (){},
+         //    style: TextButton.styleFrom(
+         //    foregroundColor: Colors.red,
+         //    ),
+         //    child: Text("텍스트 버튼"),
+         //  ),
+        ),
+      )
     );
   }
 }
