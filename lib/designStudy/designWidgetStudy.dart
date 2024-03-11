@@ -24,5 +24,25 @@ class DesignWidgetStudy extends StatelessWidget {
       ),
     );
   }
+}
+
+class SideBoxWidgetStudy extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+   return MaterialApp(
+     home: Scaffold(
+       body : Center(
+         child: Container(
+           color: Colors.blue,
+           child: Container(
+             padding: EdgeInsets.all(16.0),
+             color: Colors.red,
+           ),
+         ),
+       )
+     ),
+   );
+  }
+
 
 }
